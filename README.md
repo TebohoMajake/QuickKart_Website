@@ -20,18 +20,28 @@ with team members to develop a 3-tier system.
 
 ## Screenshots
 
+### 1. Homepage
+![Homepage](docs/Gifs/01.gif)
+### 2. Login
+![Login](docs/Gifs/02.gif)
+### 3. Product Listing Page
+![Products Page](docs/Gifs/03.gif)
+### 4. Product Description Page
+![Product Description Page](docs/Gifs/04.gif)
+### 5. Shopping Cart and Invoice
+![Shopping Cart and Invoice](docs/Gifs/05.gif)
 
 ## Features List:
 1. Online Gorcery Shopping
-  - Browse and purchase groceries through a user-friendly web interface.
+    - Browse and purchase groceries through a user-friendly web interface.
 2. Curated Recipe Selection
-  - Exploer a collection of handpicked recipes for meal inspiration.
+    - Exploer a collection of handpicked recipes for meal inspiration.
 3. One-Click Ingredient Add
-  - Automatically add all required ingredients from a selected recipe directly to your cart.
+    - Automatically add all required ingredients from a selected recipe directly to your cart.
 4. Time-Saving Shopping 
-  - Streamlined process for adding multiple items at once, reducing browsing time.
+    - Streamlined process for adding multiple items at once, reducing browsing time.
 5. Food Waste Reduction 
-  - Helps prevent over-purchasing by adding only the needed quantities of ingredients.
+    - Helps prevent over-purchasing by adding only the needed quantities of ingredients.
   
 ## Technologies used:
 **Frontend:** React.js, CSS, JavaScript
