@@ -2,7 +2,7 @@
 
 ## Description
 ### What is it:
-This project is a website called Quick Kart.
+This project is a website called Quick Kart built in 2024.
 Quick Kart is an online grocery shopping platform that simplifies meal 
 planning and grocery shopping for users. In addition to the standard online 
 grocery shopping features, Quick Kart allows users to select from a curated list 
@@ -32,6 +32,12 @@ with team members to develop a 3-tier system.
 ![Product Description Page](docs/Gifs/04.gif)
 #### - Shopping Cart and Invoice
 ![Shopping Cart and Invoice](docs/Gifs/05.gif)
+#### - My Invoices page
+![My Invoices](docs/Gifs/06.gif)
+#### - Recipes Page
+![Recipes Page](docs/Gifs/07.gif)
+#### - Recipe Details Page
+![Recipe Details](docs/Gifs/08.gif)
 
 ### Manager View
 Manager uses the same Login page as the Customer.
@@ -96,4 +102,5 @@ Manager Details:
   - Thapelo Bonoko
   
 ### Website Template:
-  
+  Designed by Untree.co 
+  Distributed By ThemeWagon
