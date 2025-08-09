@@ -20,16 +20,39 @@ with team members to develop a 3-tier system.
 
 ## Screenshots
 
-### 1. Homepage
+### Customer View
+
+#### - Homepage
 ![Homepage](docs/Gifs/01.gif)
-### 2. Login
+#### - Login
 ![Login](docs/Gifs/02.gif)
-### 3. Product Listing Page
+#### - Product Listing Page
 ![Products Page](docs/Gifs/03.gif)
-### 4. Product Description Page
+#### - Product Description Page
 ![Product Description Page](docs/Gifs/04.gif)
-### 5. Shopping Cart and Invoice
+#### - Shopping Cart and Invoice
 ![Shopping Cart and Invoice](docs/Gifs/05.gif)
+
+### Manager View
+Manager uses the same Login page as the Customer.
+Manager Details:
+**Email: JDoe@gmail.com**
+**Password: Password**
+
+#### - Manager Dashboard
+![Manager Dashboard](docs/Gifs/M01.gif)
+#### - Manager Registration
+![Manager Registration](docs/Gifs/M02.gif)
+#### - Product Stock
+![Product Stock](docs/Gifs/M03.gif)
+#### - Add Product Page
+![Add Product](docs/Gifs/M04.gif)
+#### - Edit Product Page
+![Edit Product](docs/Gifs/M05.gif)
+#### - Add Recipe Page
+![Add Recipe](docs/Gifs/M06.gif)
+#### - Edit Recipe Page
+![Edit Recipe](docs/Gifs/M07.gif)
 
 ## Features List:
 1. Online Gorcery Shopping
@@ -54,7 +77,7 @@ with team members to develop a 3-tier system.
 ### Running the Back-end:
 1. Navigate into the Back_End folder
 2. Open Back_End.sln file with Visual Studio (This was created using Visual Studio 2019)
-3. Run the project using F5
+3. Run the project using F5 (Make sure you have one of the .cs files open)
 4. A broswer window should open. Congratulations, the BackEnd is running!
 
 ### Running the Front-end:
