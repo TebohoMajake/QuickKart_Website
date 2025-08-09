@@ -1,0 +1,193 @@
+/* General Body Styling */
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Recipe Page Styling */
+.recipe-page {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Content Flexbox Layout */
+.recipe-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left Part Styling */
+.leftpart {
+  flex: 1;
+}
+
+.recipe-name {
+  font-size: 28px;
+  color: #3b5d50;
+  margin-bottom: 20px;
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Right Part Styling */
+.rightpart {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.ingredients,
+.directions {
+  margin-bottom: 20px;
+}
+
+.ingredients h2,
+.directions h2 {
+  font-size: 24px;
+  color: #3b5d50;
+  margin-bottom: 10px;
+}
+
+.ingredients p,
+.directions p {
+  font-size: 16px;
+  color: black; /* Ingredients and directions in black */
+}
+.breadCrumbItems{
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  padding-top:5px;
+  padding-bottom:1px;
+  padding-left:20px;
+}
+
+.Featured-product{
+  
+  
+  display:flex;
+  margin-left: 450px;
+  
+  
+}
+.featured-products{
+  display: flex;
+  
+  background-color: WHITE;
+  padding-left: 30px;
+  
+  border-radius: 5px;
+  margin-bottom:20px;
+  padding-block: 2px;
+  
+}
+.featured-product-card{
+  
+  
+  justify-content: center;
+}
+.featured-img{
+  min-width: 500px;
+  border-radius: 5rem;
+  margin-right: 9000px;
+  margin-left: 20px;
+  
+}
+.prodImage{
+  width: 100%;
+  height: auto;
+}
+
+.featured-product-name{
+  font-weight: bold;
+}
+.prodDetails{
+  display: flex;
+  
+}
+.order{
+  padding-top: 30px;
+  padding-right: 20px;
+  text-align: center;
+  color:#3b5d50;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+
+
+/* Featured Products Section */
+.Featured-product {
+  padding-top: 10px;;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center the content */
+  margin: 20px 0; /* Space out from the rest of the content */
+}
+
+.featured-products {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px; /* Reduced padding */
+  margin-bottom: 20px;
+}
+
+.featured-product-card {
+  display: flex;
+  flex-direction: column; /* Arrange product name and image vertically */
+  justify-content: center;
+  align-items: center; /* Center align */
+  margin: 10px; /* Space between product cards */
+  width: 150px; /* Set a fixed width for each product card */
+}
+
+.featured-img {
+  min-width: 500px;
+  border-radius: 5rem;
+  margin-right: 20px; /* Adjusted for better fit */
+  margin-left: 0; /* Reset left margin */
+}
+
+.prodImage {
+  width: 150%; /* Keep image responsive */
+  height: auto;
+  max-width: 700px;
+  max-height: 230px; /* Increased maximum height for a larger image */
+  margin-left: 270px;
+  margin-top: -90px;
+}
+
+.featured-product-name {
+  font-size: 5px; /* Change font size */
+  text-align: center; /* Center align text */
+
+  
+}
+
+
+.prodDetails {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.order {
+  padding-top: 10px; 
+  text-align: center;
+  color: #3b5d50;
+  text-decoration: underline;
+  font-size: 16px; 
+  margin-top: 5px; 
+  margin-left: 320px;
+}

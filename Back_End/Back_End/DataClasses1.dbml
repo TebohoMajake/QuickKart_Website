@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MainDatabase" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MainDatabase.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MainDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ProductRating" Member="ProductRatings">
+    <Type Name="ProductRating">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Review" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductRating" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+      <Association Name="Customer_ProductRating" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_ProductInCatergory" Member="ProductInCatergory" ThisKey="CategoryId" OtherKey="CategoryId" Type="ProductInCatergory" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductInCatergory" Member="ProductInCatergories">
+    <Type Name="ProductInCatergory">
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Category_ProductInCatergory" Member="Category" ThisKey="CategoryId" OtherKey="CategoryId" Type="Category" IsForeignKey="true" />
+      <Association Name="Product_ProductInCatergory" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FitnessGoal" Member="FitnessGoals">
+    <Type Name="FitnessGoal">
+      <Column Name="FitnessGoalId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FGoalName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="FitnessGoal_RecipeInGoal" Member="RecipeInGoals" ThisKey="FitnessGoalId" OtherKey="FitnessGoalId" Type="RecipeInGoal" />
+      <Association Name="FitnessGoal_Customer" Member="Customers" ThisKey="FitnessGoalId" OtherKey="FitnessGoal" Type="Customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecipeInGoal" Member="RecipeInGoals">
+    <Type Name="RecipeInGoal">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FitnessGoalId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FitnessGoal_RecipeInGoal" Member="FitnessGoal" ThisKey="FitnessGoalId" OtherKey="FitnessGoalId" Type="FitnessGoal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductInCart" Member="ProductInCarts">
+    <Type Name="ProductInCart">
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductInCart" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+      <Association Name="Customer_ProductInCart" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProdName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ProdDescription" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProdIngredients" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductDirections" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NumInStock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Storage" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageURL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Product_ProductRating" Member="ProductRatings" ThisKey="ProductId" OtherKey="ProductId" Type="ProductRating" />
+      <Association Name="Product_ProductInCatergory" Member="ProductInCatergories" ThisKey="ProductId" OtherKey="ProductId" Type="ProductInCatergory" />
+      <Association Name="Product_ProductInCart" Member="ProductInCarts" ThisKey="ProductId" OtherKey="ProductId" Type="ProductInCart" />
+      <Association Name="Product_ProductInRecipe" Member="ProductInRecipes" ThisKey="ProductId" OtherKey="ProductId" Type="ProductInRecipe" />
+      <Association Name="Product_SoldProduct" Member="SoldProduct" ThisKey="ProductId" OtherKey="ProductId" Type="SoldProduct" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FitnessGoal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Customer_ProductRating" Member="ProductRatings" ThisKey="CustomerId" OtherKey="CustomerId" Type="ProductRating" />
+      <Association Name="Customer_ProductInCart" Member="ProductInCarts" ThisKey="CustomerId" OtherKey="CustomerId" Type="ProductInCart" />
+      <Association Name="Customer_Invoice2" Member="Invoice2s" ThisKey="CustomerId" OtherKey="CustomerId" Type="Invoice2" />
+      <Association Name="FitnessGoal_Customer" Member="FitnessGoal1" ThisKey="FitnessGoal" OtherKey="FitnessGoalId" Type="FitnessGoal" IsForeignKey="true" />
+      <Association Name="User_Customer" Member="User" ThisKey="CustomerId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Recipe" Member="Recipes">
+    <Type Name="Recipe">
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecipeName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeDescription" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeInstructions" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RecipeIngredients" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RecipeImage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Recipe_ProductInRecipe" Member="ProductInRecipes" ThisKey="RecipeId" OtherKey="RecipeId" Type="ProductInRecipe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductInRecipe" Member="ProductInRecipes">
+    <Type Name="ProductInRecipe">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RecipeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Product_ProductInRecipe" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+      <Association Name="Recipe_ProductInRecipe" Member="Recipe" ThisKey="RecipeId" OtherKey="RecipeId" Type="Recipe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(320) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="RegDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="User_Customer" Member="Customer" ThisKey="Id" OtherKey="CustomerId" Type="Customer" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invoice2" Member="Invoice2s">
+    <Type Name="Invoice2">
+      <Column Name="InvoiceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Invoice2_ProductInInvoice" Member="ProductInInvoices" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="ProductInInvoice" />
+      <Association Name="Customer_Invoice2" Member="Customer" ThisKey="CustomerId" OtherKey="CustomerId" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductInInvoice" Member="ProductInInvoices">
+    <Type Name="ProductInInvoice">
+      <Column Name="InvoiceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProdName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="QTY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" CanBeNull="true" />
+      <Association Name="Invoice2_ProductInInvoice" Member="Invoice2" ThisKey="InvoiceId" OtherKey="InvoiceId" Type="Invoice2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SoldProduct" Member="SoldProducts">
+    <Type Name="SoldProduct">
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sales" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_SoldProduct" Member="Product" ThisKey="ProductId" OtherKey="ProductId" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

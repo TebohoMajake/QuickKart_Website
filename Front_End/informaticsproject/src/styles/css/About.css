@@ -1,0 +1,137 @@
+/* General Body Styling */
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal; /* Ensure consistent font weight */
+  font-style: normal;
+}
+
+/* Header Styling */
+header {
+  background-color: #a2b9bc;
+  color: black;
+  padding: 10px 0;
+  border-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Product Container Styling */
+.product-container {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Part Styling */
+.leftpart {
+  flex: 1;
+  padding: 20px;
+}
+
+.leftpart img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* Product Description Styling */
+.ProductDescription {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Product Name Styling */
+.productname {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #3b5d50;
+  margin: 0 0 10px;
+}
+
+/* Description and Additional Details Styling */
+.ProductDescription p {
+  margin: 10px 0;
+  font-size: 16px; /* Ensure consistency with other pages */
+  color: #3b5d50; /* Use a color that matches other pages */
+}
+
+.productname,
+.price,
+.Ingredients,
+.Work {
+  color: #3b5d50;
+
+}
+
+.price strong
+{
+    font-size:25px;
+}
+
+.price {
+  font-size: 30px;
+}
+
+/* Button Styling 
+.button {
+    background-color: #a2b9bc;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;  Ensure consistent font weight */
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.75em 1.5em;
+  background-color: #3b5d50;
+  color: aliceblue;
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+
+.delete-button{
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.75em 1.5em;
+  background-color: #C21807;
+  color: aliceblue;
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+}
+
+/* Ingredient and Work Sections Styling */
+.Ingredients,
+.Work {
+  font-size: 16px;
+  margin: 10px 0;
+}
